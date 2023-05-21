@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "8fd60346-0214-4ef4-addb-63473ee6ab9a",
+		"name": "ACT2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24952646"
+	},
+	"item": [
+		{
+			"name": "POST /api/posts",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"title\": \"Sunshine\",\r\n    \"text\": \"Sunday\",\r\n    \"author\": \"Osky\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/posts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /api/posts Incomplete",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"title\": \"Sunshine\",\r\n    \"text\": \"Sunday\",\r\n    \"author\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/posts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /api/posts Invalid",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"title\": \"Hi\",\r\n    \"text\": \"Sunday\",\r\n    \"author\": \"Osky\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/posts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /api/posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/posts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /api/posts/<id> 200",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/posts/646aaa42f72bf18f6ab3d8a0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"posts",
+						"646aaa42f72bf18f6ab3d8a0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /api/posts/<id> 404",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/posts/646aaa4af72bf18f6ab3d8a5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"posts",
+						"646aaa4af72bf18f6ab3d8a5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH /api/posts/<id> 200",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"author\": \"Sofi\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/posts/646aaa42f72bf18f6ab3d8a0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"posts",
+						"646aaa42f72bf18f6ab3d8a0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH /api/posts/<id> 404",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Today\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/posts/646aaa4af72bf18f6ab3d8a5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"posts",
+						"646aaa4af72bf18f6ab3d8a5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE /api/posts/<id> 204",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/posts/646aa9a4f72bf18f6ab3d89d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"posts",
+						"646aa9a4f72bf18f6ab3d89d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE /api/posts/<id> 404",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/posts/646aaa4af72bf18f6ab3d8a5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"posts",
+						"646aaa4af72bf18f6ab3d8a5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
