@@ -1,0 +1,790 @@
+{
+	"info": {
+		"_postman_id": "00c565d1-1d2e-40dd-b65d-b8cae22dd2f7",
+		"name": "ACT4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24952646"
+	},
+	"item": [
+		{
+			"name": "POST api/users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Nicolas Vargas\",\r\n  \"email\": \"nvargas1@example.com\",\r\n  \"password\": \"fedex123\",\r\n  \"bio\": \"Learning\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "POST api/users 201",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Nicolas Vargas\",\r\n  \"email\": \"nvargas1@example.com\",\r\n  \"password\": \"fedex123\",\r\n  \"bio\": \"Learning\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "281"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"119-SgyZtWZfxM1LW8XO2Z4/NlLFUYM\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 May 2023 04:50:45 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Usuario creado exitosamente\",\n    \"activationLink\": \"http://myapp.com/api/activate-account?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDZhZjRhNTU4MjkyMWVlYzQ1MjhhNWUiLCJpYXQiOjE2ODQ3MzEwNDUsImV4cCI6MTY4NDczNDY0NX0.9CzdeQ5g7Zjf2DtKCUso6w7t9RVvQKhZku5vg4sZjXM\"\n}"
+				},
+				{
+					"name": "POST api/users 400",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Nicolas Vargas\",\r\n  \"email\": \"nvargas1@example.com\",\r\n  \"password\": \"fedex123\",\r\n  \"bio\": \"Learning\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "42"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2a-caOJkYTnlDqWsPBwG3yPR4kPg9s\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 May 2023 04:58:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"El email ya está registrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "GET api/activate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/activate-account?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDZhZjRhNTU4MjkyMWVlYzQ1MjhhNWUiLCJpYXQiOjE2ODQ3MzEwNDUsImV4cCI6MTY4NDczNDY0NX0.9CzdeQ5g7Zjf2DtKCUso6w7t9RVvQKhZku5vg4sZjXM",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"activate-account"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDZhZjRhNTU4MjkyMWVlYzQ1MjhhNWUiLCJpYXQiOjE2ODQ3MzEwNDUsImV4cCI6MTY4NDczNDY0NX0.9CzdeQ5g7Zjf2DtKCUso6w7t9RVvQKhZku5vg4sZjXM"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET api/activate 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/activate-account?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDZhZjRhNTU4MjkyMWVlYzQ1MjhhNWUiLCJpYXQiOjE2ODQ3MzEwNDUsImV4cCI6MTY4NDczNDY0NX0.9CzdeQ5g7Zjf2DtKCUso6w7t9RVvQKhZku5vg4sZjXM",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"activate-account"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDZhZjRhNTU4MjkyMWVlYzQ1MjhhNWUiLCJpYXQiOjE2ODQ3MzEwNDUsImV4cCI6MTY4NDczNDY0NX0.9CzdeQ5g7Zjf2DtKCUso6w7t9RVvQKhZku5vg4sZjXM"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "42"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2a-+XwW1QsvoQ7WnbHf1Sfoc4OMVzs\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 May 2023 04:51:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Cuenta activada exitosamente\"\n}"
+				},
+				{
+					"name": "GET api/activate 401",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/activate-account?token=Q3MzEwNDUsImV4cCI6MTY4NDczNDY0NX0.9CzdeQ5g7Zjf2DtKCUso6w7t9RVvQKhZku5vg4sZjXM",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"activate-account"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "Q3MzEwNDUsImV4cCI6MTY4NDczNDY0NX0.9CzdeQ5g7Zjf2DtKCUso6w7t9RVvQKhZku5vg4sZjXM"
+								}
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "44"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2c-3u7ingNtW680QxAzmSOGTTEFVzk\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 May 2023 04:59:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Token de activación inválido\"\n}"
+				}
+			]
+		},
+		{
+			"name": "POST api/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"nvargas1@example.com\",\r\n  \"password\": \"fedex123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "POST api/login 200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"nvargas1@example.com\",\r\n  \"password\": \"fedex123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "188"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"bc-jmcUGik+Oh3ezhVhvwaDT3ctYY4\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 May 2023 04:53:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDZhZjRhNTU4MjkyMWVlYzQ1MjhhNWUiLCJpYXQiOjE2ODQ3MzEyMzcsImV4cCI6MTY4NDczNDgzN30.ijwB9hn-zii79TOJIDcQD3Md4JUIsgVEL2UJIH60rSI\"\n}"
+				},
+				{
+					"name": "POST api/login 401",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"nvargas1@example.com\",\r\n  \"password\": \"fede23\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "37"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"25-joE3Vs4WbNlopg5Qpbv3ARF0lTo\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 May 2023 04:59:54 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Credenciales inválidas\"\n}"
+				}
+			]
+		},
+		{
+			"name": "POST api/posts",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDZhZjRhNTU4MjkyMWVlYzQ1MjhhNWUiLCJpYXQiOjE2ODQ3MzEyMzcsImV4cCI6MTY4NDczNDgzN30.ijwB9hn-zii79TOJIDcQD3Md4JUIsgVEL2UJIH60rSI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Relax\",\r\n  \"text\": \"Domingo en familia\",\r\n  \"author\": \"Nico\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/posts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"posts"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "POST api/posts 201",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDZhZjRhNTU4MjkyMWVlYzQ1MjhhNWUiLCJpYXQiOjE2ODQ3MzEyMzcsImV4cCI6MTY4NDczNDgzN30.ijwB9hn-zii79TOJIDcQD3Md4JUIsgVEL2UJIH60rSI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Relax\",\r\n  \"text\": \"Domingo en familia\",\r\n  \"author\": \"Nico\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"posts"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "180"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b4-Y0N+aZmehzf86QYnFn+5GXsKePI\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 May 2023 04:56:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"title\": \"Relax\",\n    \"text\": \"Domingo en familia\",\n    \"author\": \"Nico\",\n    \"_id\": \"646af5ec582921eec4528a62\",\n    \"createdAt\": \"2023-05-22T04:56:12.934Z\",\n    \"updatedAt\": \"2023-05-22T04:56:12.934Z\",\n    \"__v\": 0\n}"
+				},
+				{
+					"name": "POST api/posts 401",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": ".eyJ1c2VySWQiOiI2NDZhZjRhNTU4MjkyMWVlYzQ1MjhhNWUiLCJpYXQiOjE2ODQ3MzEyMzcsImV4cCI6MTY4NDczNDgzN30.ijwB9hn-zii79TOJIDcQD3Md4JUIsgVEL2UJIH60rSI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Relax\",\r\n  \"text\": \"Domingo en familia\",\r\n  \"author\": \"Nico\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"posts"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "47"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2f-cED9Uh/ytd+cQuQZLO1BN9BVvok\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 May 2023 05:00:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Token de autenticación inválido\"\n}"
+				}
+			]
+		},
+		{
+			"name": "GET api/posts",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDZhZjRhNTU4MjkyMWVlYzQ1MjhhNWUiLCJpYXQiOjE2ODQ3MzEyMzcsImV4cCI6MTY4NDczNDgzN30.ijwB9hn-zii79TOJIDcQD3Md4JUIsgVEL2UJIH60rSI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/posts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"posts"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET api/posts 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDZhZjRhNTU4MjkyMWVlYzQ1MjhhNWUiLCJpYXQiOjE2ODQ3MzEyMzcsImV4cCI6MTY4NDczNDgzN30.ijwB9hn-zii79TOJIDcQD3Md4JUIsgVEL2UJIH60rSI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"posts"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "182"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b6-pAwEiNIgs3yjkJ837QqAaTPeKxk\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 May 2023 04:57:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"646af5ec582921eec4528a62\",\n        \"title\": \"Relax\",\n        \"text\": \"Domingo en familia\",\n        \"author\": \"Nico\",\n        \"createdAt\": \"2023-05-22T04:56:12.934Z\",\n        \"updatedAt\": \"2023-05-22T04:56:12.934Z\",\n        \"__v\": 0\n    }\n]"
+				},
+				{
+					"name": "GET api/posts 401",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": ".eyJ1c2VySWQiOiI2NDZhZjRhNTU4MjkyMWVlYzQ1MjhhNWUiLCJpYXQiOjE2ODQ3MzEyMzcsImV4cCI6MTY4NDczNDgzN30.ijwB9hn-zii79TOJIDcQD3Md4JUIsgVEL2UJIH60rSI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"posts"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "47"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2f-cED9Uh/ytd+cQuQZLO1BN9BVvok\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 May 2023 05:00:48 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Token de autenticación inválido\"\n}"
+				}
+			]
+		}
+	]
+}

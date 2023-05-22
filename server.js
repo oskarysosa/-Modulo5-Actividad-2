@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const bcrypt = require("bcrypt");
 const dbConfig = require("./config/db.config");
 const Post = require("./models/post");
 const User = require("./models/user");
@@ -25,24 +25,53 @@ app.post("/api/users", async (req, res) => {
       return res.status(400).json({ message: "El email ya está registrado" });
     }
 
-    // Cifra la contraseña
+    // Cifrar la contraseña
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    // Crea un nuevo usuario
+    // Crear un nuevo usuario con active: false
     const user = new User({
       name,
       email,
       password: hashedPassword,
       bio,
+      active: false,
     });
 
-    // Guarda el usuario en la base de datos
+    // Guardar el usuario en la base de datos
     await user.save();
 
-    res.status(201).json({ message: "Usuario creado exitosamente" });
+    // Generar el token de activación
+    const token = jwt.sign({ userId: user._id }, "secretKey", {
+      expiresIn: "1h",
+    });
+
+    // Construir el enlace de activación
+    const activationLink = `http://myapp.com/api/activate-account?token=${token}`;
+
+    res
+      .status(201)
+      .json({ message: "Usuario creado exitosamente", activationLink });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Error en el servidor" });
+  }
+});
+
+// Ruta para la activación de cuenta
+app.get("/api/activate-account", async (req, res) => {
+  try {
+    const { token } = req.query;
+
+    // Verificar el token y actualizar el campo 'active' del usuario
+    const decoded = jwt.verify(token, "secretKey");
+    const userId = decoded.userId;
+
+    // Actualizar el campo 'active' del usuario a true
+    await User.findByIdAndUpdate(userId, { active: true });
+
+    res.status(200).json({ message: "Cuenta activada exitosamente" });
+  } catch (error) {
+    res.status(401).json({ message: "Token de activación inválido" });
   }
 });
 
@@ -58,6 +87,11 @@ app.post("/api/login", async (req, res) => {
       return res.status(401).json({ message: "Credenciales inválidas" });
     }
 
+    // Verifica si el usuario está activo
+    if (!user.active) {
+      return res.status(401).json({ message: "La cuenta no está activada" });
+    }
+
     // Compara la contraseña cifrada
     const passwordMatch = await bcrypt.compare(password, user.password);
 
@@ -69,7 +103,7 @@ app.post("/api/login", async (req, res) => {
     const token = jwt.sign({ userId: user._id }, "secretKey", {
       expiresIn: "1h",
     });
-    console.log("Generated token:", token);
+
     res.status(200).json({ token });
   } catch (error) {
     console.error(error);
