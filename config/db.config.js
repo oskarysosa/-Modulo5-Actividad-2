@@ -30,6 +30,10 @@ const dbConfig = async () => {
     console.info("Successfully disconnected mongodb");
     process.exit(0);
   });
+
+  await Promise.all(
+    Object.values(mongoose.models).map((model) => model.createIndexes())
+  );
 };
 
 module.exports = dbConfig;

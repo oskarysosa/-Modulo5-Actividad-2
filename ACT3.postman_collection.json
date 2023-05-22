@@ -1,19 +1,463 @@
 {
 	"info": {
-		"_postman_id": "8fd60346-0214-4ef4-addb-63473ee6ab9a",
-		"name": "ACT2",
+		"_postman_id": "637bcedf-6c99-4916-84c2-5f4fb3460c91",
+		"name": "ACT3",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "24952646"
 	},
 	"item": [
 		{
+			"name": "POST /api/users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "NEW",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Sofia Trespalacios\",\r\n  \"email\": \"sofitrespa@example.com\",\r\n  \"password\": \"password123\",\r\n  \"bio\": \"Gastronomía\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "41"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"29-m49oSK2C7ZgcCZiNJTfRSvSidBA\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 May 2023 02:31:45 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Usuario creado exitosamente\"\n}"
+				},
+				{
+					"name": "Already Created",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Sofia Trespalacios\",\r\n  \"email\": \"sofitrespa@example.com\",\r\n  \"password\": \"password123\",\r\n  \"bio\": \"Gastronomía\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "42"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2a-caOJkYTnlDqWsPBwG3yPR4kPg9s\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 May 2023 02:33:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"El email ya está registrado\"\n}"
+				},
+				{
+					"name": "Error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Pamela Rojas\",\r\n  \"email\": \"pameroj@example.com\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"22-LkvgIlJyhGlDtown5ajc2Y9KF5w\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 May 2023 02:34:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Error en el servidor\"\n}"
+				}
+			]
+		},
+		{
+			"name": "POST /api/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "POST /api/login 200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"sofitrespa@example.com\",\r\n  \"password\": \"password123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "188"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"bc-2mpBr6u+sJwlTw4TkI3aiY1E1mQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 May 2023 02:39:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDZhZDViM2YyMWFkZTY0ODQ0M2UyOTMiLCJpYXQiOjE2ODQ3MjMxNDcsImV4cCI6MTY4NDcyNjc0N30.yoOcGRY7Y_jDuqiIV2EjtZCiJw_jtnjjoeKDgD-swrc\"\n}"
+				},
+				{
+					"name": "POST /api/login 401",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"sofitrespa@example.com\",\r\n  \"password\": \"ssword123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "37"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"25-joE3Vs4WbNlopg5Qpbv3ARF0lTo\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 May 2023 02:39:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Credenciales inválidas\"\n}"
+				},
+				{
+					"name": "POST /api/login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"sofitrespa@example.com\",\r\n  \"password\": \"password123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "188"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"bc-sh/vrNMhlCpWt1szqPM9zyneN8E\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 May 2023 03:00:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDZhZGE5NDVkZmM0ZTQ2YWY1YTg0ZDIiLCJpYXQiOjE2ODQ3MjQ0MDAsImV4cCI6MTY4NDcyODAwMH0.o2ZTeZY-DBcbHzvGEwdwKR4e_yklhj8XMzaPQvflg48\"\n}"
+				}
+			]
+		},
+		{
 			"name": "POST /api/posts",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDZhZDViM2YyMWFkZTY0ODQ0M2UyOTMiLCJpYXQiOjE2ODQ3MjM3MTksImV4cCI6MTY4NDcyNzMxOX0.kC_5snItDJaQo3kEoTUHPaejkNDwArBlFkf_QhKw_3M",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n   \"title\": \"Weekends\",\r\n    \"text\": \"Today is a good day\",\r\n    \"author\": \"Osky\"\r\n}",
+					"raw": "{\r\n  \"title\": \"Domingo\",\r\n  \"text\": \"¡Hola a todos! Este es mi primer post en la comunidad.\",\r\n  \"author\": \"Sofi\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -35,13 +479,19 @@
 			},
 			"response": [
 				{
-					"name": "POST /api/posts",
+					"name": "POST /api/posts 201",
 					"originalRequest": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDZhZGUzNWNjYzJlNDA1MmU1NmM0M2MiLCJpYXQiOjE2ODQ3MjUzMTcsImV4cCI6MTY4NDcyODkxN30.kO0HcnfKO6gQSTx6UDm8ICzUZsFz4OcBsB8oZRddJFA",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"title\": \"Sunshine\",\r\n    \"text\": \"Sunday\",\r\n    \"author\": \"Osky\"\r\n}",
+							"raw": "{\r\n  \"title\": \"Domingo\",\r\n  \"text\": \"¡Hola a todos! Este es mi primer post en la comunidad.\",\r\n  \"author\": \"Sofi\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -75,15 +525,15 @@
 						},
 						{
 							"key": "Content-Length",
-							"value": "171"
+							"value": "219"
 						},
 						{
 							"key": "ETag",
-							"value": "W/\"ab-jTzbtsMjdLkj+MLzck7196U1xcQ\""
+							"value": "W/\"db-fC1PzghXv/9ypeSjSoVWLN5p6jA\""
 						},
 						{
 							"key": "Date",
-							"value": "Mon, 22 May 2023 01:47:12 GMT"
+							"value": "Mon, 22 May 2023 03:20:33 GMT"
 						},
 						{
 							"key": "Connection",
@@ -95,16 +545,22 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"title\": \"Sunshine\",\n    \"text\": \"Sunday\",\n    \"author\": \"Osky\",\n    \"_id\": \"646ac9a00b74d7729b4bfc7c\",\n    \"createdAt\": \"2023-05-22T01:47:12.811Z\",\n    \"updatedAt\": \"2023-05-22T01:47:12.812Z\",\n    \"__v\": 0\n}"
+					"body": "{\n    \"title\": \"Domingo\",\n    \"text\": \"¡Hola a todos! Este es mi primer post en la comunidad.\",\n    \"author\": \"Sofi\",\n    \"_id\": \"646adf81ccc2e4052e56c43f\",\n    \"createdAt\": \"2023-05-22T03:20:33.936Z\",\n    \"updatedAt\": \"2023-05-22T03:20:33.938Z\",\n    \"__v\": 0\n}"
 				},
 				{
-					"name": "POST /api/posts",
+					"name": "POST /api/posts 401",
 					"originalRequest": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer ",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"title\": \"Weekends\",\r\n    \"text\": \"Today is a good day\",\r\n    \"author\": \"Osky\"\r\n}",
+							"raw": "{\r\n  \"title\": \"Domingo\",\r\n  \"text\": \"¡Hola a todos! Este es mi primer post en la comunidad.\",\r\n  \"author\": \"Sofi\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -124,8 +580,8 @@
 							]
 						}
 					},
-					"status": "Created",
-					"code": 201,
+					"status": "Unauthorized",
+					"code": 401,
 					"_postman_previewlanguage": "json",
 					"header": [
 						{
@@ -138,15 +594,15 @@
 						},
 						{
 							"key": "Content-Length",
-							"value": "184"
+							"value": "47"
 						},
 						{
 							"key": "ETag",
-							"value": "W/\"b8-2BHTuuA94n9DsX1XfnOjYRblEsU\""
+							"value": "W/\"2f-cED9Uh/ytd+cQuQZLO1BN9BVvok\""
 						},
 						{
 							"key": "Date",
-							"value": "Mon, 22 May 2023 01:48:40 GMT"
+							"value": "Mon, 22 May 2023 02:50:43 GMT"
 						},
 						{
 							"key": "Connection",
@@ -158,201 +614,21 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"title\": \"Weekends\",\n    \"text\": \"Today is a good day\",\n    \"author\": \"Osky\",\n    \"_id\": \"646ac9f80b74d7729b4bfc81\",\n    \"createdAt\": \"2023-05-22T01:48:40.913Z\",\n    \"updatedAt\": \"2023-05-22T01:48:40.913Z\",\n    \"__v\": 0\n}"
+					"body": "{\n    \"message\": \"Token de autenticación inválido\"\n}"
 				}
 			]
 		},
 		{
-			"name": "POST /api/posts Incomplete",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n   \"title\": \"Sunshine\",\r\n    \"text\": \"Sunday\",\r\n    \"author\": \"\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/api/posts",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"posts"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "POST /api/posts Incomplete",
-					"originalRequest": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n   \"title\": \"Sunshine\",\r\n    \"text\": \"Sunday\",\r\n    \"author\": \"\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/api/posts",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"posts"
-							]
-						}
-					},
-					"status": "Bad Request",
-					"code": 400,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "43"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"2b-L1FJjIA4yuOBnweHQR8zeWRvAX4\""
-						},
-						{
-							"key": "Date",
-							"value": "Mon, 22 May 2023 01:47:27 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"error\": \"Todos los campos son requeridos\"\n}"
-				}
-			]
-		},
-		{
-			"name": "POST /api/posts Invalid",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n   \"title\": \"Hi\",\r\n    \"text\": \"Sunday\",\r\n    \"author\": \"Osky\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/api/posts",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"posts"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "POST /api/posts Invalid",
-					"originalRequest": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n   \"title\": \"Hi\",\r\n    \"text\": \"Sunday\",\r\n    \"author\": \"Osky\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/api/posts",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"posts"
-							]
-						}
-					},
-					"status": "Bad Request",
-					"code": 400,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "69"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"45-xS1aU6aulRhk3zlu3DA0P8jUkrs\""
-						},
-						{
-							"key": "Date",
-							"value": "Mon, 22 May 2023 01:47:37 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"error\": \"Los campos title y text deben tener al menos 5 caracteres\"\n}"
-				}
-			]
-		},
-		{
-			"name": "GET /api/posts",
+			"name": "GET /api/post",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDZhZGUzNWNjYzJlNDA1MmU1NmM0M2MiLCJpYXQiOjE2ODQ3MjUzMTcsImV4cCI6MTY4NDcyODkxN30.kO0HcnfKO6gQSTx6UDm8ICzUZsFz4OcBsB8oZRddJFA",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "http://localhost:3000/api/posts",
 					"protocol": "http",
@@ -366,35 +642,20 @@
 					]
 				}
 			},
-			"response": []
-		},
-		{
-			"name": "GET /api/posts/<id> 200",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/api/posts/646aaa42f72bf18f6ab3d8a0",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"posts",
-						"646aaa42f72bf18f6ab3d8a0"
-					]
-				}
-			},
 			"response": [
 				{
-					"name": "GET /api/posts/<id> 200",
+					"name": "GET /api/post 200",
 					"originalRequest": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDZhZGUzNWNjYzJlNDA1MmU1NmM0M2MiLCJpYXQiOjE2ODQ3MjUzMTcsImV4cCI6MTY4NDcyODkxN30.kO0HcnfKO6gQSTx6UDm8ICzUZsFz4OcBsB8oZRddJFA",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "http://localhost:3000/api/posts/646ac9f80b74d7729b4bfc81",
+							"raw": "http://localhost:3000/api/posts",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -402,8 +663,7 @@
 							"port": "3000",
 							"path": [
 								"api",
-								"posts",
-								"646ac9f80b74d7729b4bfc81"
+								"posts"
 							]
 						}
 					},
@@ -421,15 +681,15 @@
 						},
 						{
 							"key": "Content-Length",
-							"value": "184"
+							"value": "221"
 						},
 						{
 							"key": "ETag",
-							"value": "W/\"b8-/CEQWnEPYMWs5UH7PoP27B6octY\""
+							"value": "W/\"dd-deJgcydw139LJ6j/qOHT157KmLs\""
 						},
 						{
 							"key": "Date",
-							"value": "Mon, 22 May 2023 01:49:08 GMT"
+							"value": "Mon, 22 May 2023 03:23:17 GMT"
 						},
 						{
 							"key": "Connection",
@@ -441,132 +701,21 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"_id\": \"646ac9f80b74d7729b4bfc81\",\n    \"title\": \"Weekends\",\n    \"text\": \"Today is a good day\",\n    \"author\": \"Osky\",\n    \"createdAt\": \"2023-05-22T01:48:40.913Z\",\n    \"updatedAt\": \"2023-05-22T01:48:40.913Z\",\n    \"__v\": 0\n}"
-				}
-			]
-		},
-		{
-			"name": "GET /api/posts/<id> 404",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/api/posts/646aaa4af72bf18f6ab3d8a5",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"posts",
-						"646aaa4af72bf18f6ab3d8a5"
-					]
-				}
-			},
-			"response": [
+					"body": "[\n    {\n        \"_id\": \"646adf81ccc2e4052e56c43f\",\n        \"title\": \"Domingo\",\n        \"text\": \"¡Hola a todos! Este es mi primer post en la comunidad.\",\n        \"author\": \"Sofi\",\n        \"createdAt\": \"2023-05-22T03:20:33.936Z\",\n        \"updatedAt\": \"2023-05-22T03:20:33.938Z\",\n        \"__v\": 0\n    }\n]"
+				},
 				{
-					"name": "GET /api/posts/<id> 404",
+					"name": "GET /api/post 401",
 					"originalRequest": {
 						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/api/posts/646aaa4af72bf18f6ab3d8a5",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"posts",
-								"646aaa4af72bf18f6ab3d8a5"
-							]
-						}
-					},
-					"status": "Not Found",
-					"code": 404,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "29"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"1d-d0ZSvdnqJVFYQA7KY6X/Bh+R6Ck\""
-						},
-						{
-							"key": "Date",
-							"value": "Mon, 22 May 2023 01:46:35 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"error\": \"El post no existe\"\n}"
-				}
-			]
-		},
-		{
-			"name": "PATCH /api/posts/<id> 200",
-			"request": {
-				"method": "PATCH",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"author\": \"Sofi\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/api/posts/646ac9f80b74d7729b4bfc81",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"posts",
-						"646ac9f80b74d7729b4bfc81"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "PATCH /api/posts/<id> 200",
-					"originalRequest": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"author\": \"Sofi\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text"
 							}
-						},
+						],
 						"url": {
-							"raw": "http://localhost:3000/api/posts/646ac9f80b74d7729b4bfc81",
+							"raw": "http://localhost:3000/api/posts",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -574,13 +723,12 @@
 							"port": "3000",
 							"path": [
 								"api",
-								"posts",
-								"646ac9f80b74d7729b4bfc81"
+								"posts"
 							]
 						}
 					},
-					"status": "OK",
-					"code": 200,
+					"status": "Unauthorized",
+					"code": 401,
 					"_postman_previewlanguage": "json",
 					"header": [
 						{
@@ -593,15 +741,15 @@
 						},
 						{
 							"key": "Content-Length",
-							"value": "184"
+							"value": "59"
 						},
 						{
 							"key": "ETag",
-							"value": "W/\"b8-bUpGZn52qxUameUeddZuQj8/je8\""
+							"value": "W/\"3b-KX9nYJBD+I46zrhwvTtotr44Xkk\""
 						},
 						{
 							"key": "Date",
-							"value": "Mon, 22 May 2023 01:49:41 GMT"
+							"value": "Mon, 22 May 2023 03:23:53 GMT"
 						},
 						{
 							"key": "Connection",
@@ -613,248 +761,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"_id\": \"646ac9f80b74d7729b4bfc81\",\n    \"title\": \"Weekends\",\n    \"text\": \"Today is a good day\",\n    \"author\": \"Sofi\",\n    \"createdAt\": \"2023-05-22T01:48:40.913Z\",\n    \"updatedAt\": \"2023-05-22T01:48:40.913Z\",\n    \"__v\": 0\n}"
-				}
-			]
-		},
-		{
-			"name": "PATCH /api/posts/<id> 404",
-			"request": {
-				"method": "PATCH",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"Today\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/api/posts/646aaa4af72bf18f6ab3d8a5",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"posts",
-						"646aaa4af72bf18f6ab3d8a5"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "PATCH /api/posts/<id> 404",
-					"originalRequest": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"Today\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/api/posts/646aaa4af72bf18f6ab3d8a5",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"posts",
-								"646aaa4af72bf18f6ab3d8a5"
-							]
-						}
-					},
-					"status": "Not Found",
-					"code": 404,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "29"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"1d-d0ZSvdnqJVFYQA7KY6X/Bh+R6Ck\""
-						},
-						{
-							"key": "Date",
-							"value": "Mon, 22 May 2023 01:46:56 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"error\": \"El post no existe\"\n}"
-				}
-			]
-		},
-		{
-			"name": "DELETE /api/posts/<id> 204",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/api/posts/646ac89b0b74d7729b4bfc75",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"posts",
-						"646ac89b0b74d7729b4bfc75"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "DELETE /api/posts/<id> 204",
-					"originalRequest": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/api/posts/646ac89b0b74d7729b4bfc75",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"posts",
-								"646ac89b0b74d7729b4bfc75"
-							]
-						}
-					},
-					"status": "No Content",
-					"code": 204,
-					"_postman_previewlanguage": "plain",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"a-bAsFyilMr4Ra1hIU5PyoyFRunpI\""
-						},
-						{
-							"key": "Date",
-							"value": "Mon, 22 May 2023 01:50:28 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": null
-				}
-			]
-		},
-		{
-			"name": "DELETE /api/posts/<id> 404",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/api/posts/646aaa4af72bf18f6ab3d8a5",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"posts",
-						"646aaa4af72bf18f6ab3d8a5"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "DELETE /api/posts/<id> 404",
-					"originalRequest": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/api/posts/646aaa4af72bf18f6ab3d8a5",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"posts",
-								"646aaa4af72bf18f6ab3d8a5"
-							]
-						}
-					},
-					"status": "Not Found",
-					"code": 404,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "29"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"1d-d0ZSvdnqJVFYQA7KY6X/Bh+R6Ck\""
-						},
-						{
-							"key": "Date",
-							"value": "Mon, 22 May 2023 01:48:19 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"error\": \"El post no existe\"\n}"
+					"body": "{\n    \"message\": \"No se proporcionó un token de autenticación\"\n}"
 				}
 			]
 		}
